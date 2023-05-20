@@ -1,3 +1,4 @@
+const firebase = require('firebase/app');
 const { initializeApp } = require('firebase/app')
 const { getDatabase } = require('firebase/database');
 require('firebase/database');
