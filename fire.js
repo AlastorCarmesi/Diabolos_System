@@ -1,4 +1,4 @@
-const firebase = require('firebase')
+var firebase = require('firebase')
 // datos de firebase
 var config = {
 
