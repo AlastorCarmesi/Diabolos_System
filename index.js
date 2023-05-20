@@ -116,7 +116,7 @@ app.post('/insertar', (req, res)=>{
       timestampsInSnapshots: true
     });
     
-    db.collection('/BD').add({
+    db.collection('BD').add({
      
       ID: req.body.ID,
       Sensor_PIR: req.body.Sensor_PIR,
