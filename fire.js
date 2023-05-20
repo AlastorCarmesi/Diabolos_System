@@ -1,8 +1,9 @@
 const firebase = require('firebase/app');
+require("firebase/firestore");
 const { initializeApp } = require('firebase/app')
 const { getDatabase } = require('firebase/database');
 require('firebase/database');
-require("firebase/firestore");
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDiLnrTW9q6cCqFektC-HpxQw65Y3ZCVQ8",
@@ -20,7 +21,7 @@ const app = initializeApp(firebaseConfig);
 // Obtener la instancia de la base de datos
 const fire = getDatabase(app);
 // Obtener una instancia de Firestore
-const Firestore = firebase.firestore();
+const Firestore = firebase.default.firestore();
 module.exports ={
     fire,
     Firestore
