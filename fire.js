@@ -12,6 +12,9 @@ const firebaseConfig = {
   measurementId: "G-BTPB0XBY5B"
 };
 
+// Importar la función initializeApp correctamente
+const { initializeApp } = require('firebase/app')
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
