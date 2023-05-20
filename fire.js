@@ -1,6 +1,6 @@
 var firebase = require('firebase')
 
-const firebaseConfig = {
+const Config = {
     apiKey: "AIzaSyDiLnrTW9q6cCqFektC-HpxQw65Y3ZCVQ8",
     authDomain: "diabolos-security-system.firebaseapp.com",
     databaseURL: "https://diabolos-security-system-default-rtdb.firebaseio.com",
@@ -11,5 +11,5 @@ const firebaseConfig = {
     measurementId: "G-BTPB0XBY5B"
   };
 
-const fire = firebase.initializeApp(firebaseConfig);
+const fire = firebase.initializeApp(Config);
 module.exports = fire;
