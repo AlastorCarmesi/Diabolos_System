@@ -1,5 +1,6 @@
+
 import { initializeApp } from 'firebase/app';
-import { getDatabase } from 'firebase/database';
+ 'firebase/database';
 const firebase = require('firebase')
 const firebaseConfig = {
 
@@ -21,6 +22,6 @@ const firebaseConfig = {
   
   };
 
-const fire = firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 const database = getDatabase(app);
 export default database;
