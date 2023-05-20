@@ -2,6 +2,7 @@ const firebase = require ('firebase/app');
 const { initializeApp } = require('firebase/app')
 const { getDatabase } = require('firebase/database');
 require('firebase/database');
+require("firebase/firestore");
 
 const firebaseConfig = {
   apiKey: "AIzaSyDiLnrTW9q6cCqFektC-HpxQw65Y3ZCVQ8",
