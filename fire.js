@@ -21,7 +21,7 @@ const app = initializeApp(firebaseConfig);
 // Obtener la instancia de la base de datos
 const fire = getDatabase(app);
 // Obtener una instancia de Firestore
-const Firestore = firebase.default.firestore();
+const Firestore = firebase.firestore();
 module.exports ={
     fire,
     Firestore
