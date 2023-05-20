@@ -14,6 +14,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 // Obtener la instancia de la base de datos
 const database = firebase.database(app);
 module.exports = database;
