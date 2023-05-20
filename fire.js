@@ -1,5 +1,5 @@
 var firebase = require('firebase')
-var firebaseConfig = {
+const firebaseConfig = {
 
     apiKey: "AIzaSyDiLnrTW9q6cCqFektC-HpxQw65Y3ZCVQ8",
   
