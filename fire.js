@@ -1,4 +1,3 @@
-const firebase = require ('firebase/app');
 const { initializeApp } = require('firebase/app')
 const { getDatabase } = require('firebase/database');
 require('firebase/database');
@@ -17,7 +16,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 // Obtener la instancia de la base de datos
 const fire = getDatabase(app);
-module.exports = fire;
+// Obtener una instancia de Firestore
+const firestore = firebase.firestore();
+module.exports ={
+    fire,
+    firestore
+};

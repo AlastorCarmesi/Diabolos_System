@@ -1,9 +1,10 @@
 const express = require('express');
 const PORT = process.env.PORT || 5000
 var app = express();
-const fire = require('./fire');
+const {fire, firestore} = require('./fire');
 var cors = require('cors');
 var bodyParser = require('body-parser');
+const { error } = require('console');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -15,7 +16,7 @@ app.get('/', (req, res) => {
   })
 
   app.get('/ver', (req, res) => {
-    const db = fire.firestore();
+    const db = firestore;
       db.settings({
         timestampsInSnapshots: true
       });
@@ -35,27 +36,29 @@ app.get('/', (req, res) => {
   })
 
   app.post('/insertar', (req, res)=>{
-    const db = fire.firestore();
-      db.settings({
-        timestampsInSnapshots: true
-      });
-      
-      db.collection('/BD').add({
-       
+    const db = firestore;
+    db.collection('/BD').add(
+      {
         ID: req.ID,
         Sensor_PIR: req.body.Sensor_PIR,
         nombre: req.body.nombre,
         Fecha: new Date().toJSON()
+
+      }).then(() =>{
+        res.send(
+        {
+            ID: req.body.ID,
+            Sensor_PIR: req.body.Sensor_PIR,
+            nombre: req.body.nombre,
+            Fecha: new Date(),
+            status: 'Valores insertados!'
+
+        });
+      }).catch((error) =>{
+        console.log('Error!', error);
+        res.status(500).send('Error al insertar los datos');
       });
-      res.send({
-        ID: req.body.ID,
-        Sensor_PIR: req.body.Sensor_PIR,
-        nombre: req.body.nombre,
-        Fecha: new Date(),
-        status: 'Valores insertados!'
-    })
-  })
-  
+  });
 
   app.listen(PORT, () => {
     console.log(`Servidor en funcionamiento en el puerto ${PORT}`);
