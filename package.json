@@ -2,10 +2,15 @@
   "name": "Diabolos_System",
   "version": "0.3.0",
   "description": "Proyecto IOT ",
-  "main": "index.js",
   "repository": "https://github.com/AlastorCarmesi/Diabolos_System.git",
   "author": "AlastorCarmesi <carmesiblog7@gmail.com>",
   "license": "MIT",
+  
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
