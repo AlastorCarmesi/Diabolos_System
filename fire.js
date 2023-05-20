@@ -2,19 +2,19 @@ var firebase = require('firebase')
 // datos de firebase
 var config = {
 
-  apiKey: "AIzaSyAFSMbZ3kbr4i7ITJmJe28xyX0F65eAeSw",
+  apiKey: "AIzaSyDiLnrTW9q6cCqFektC-HpxQw65Y3ZCVQ8",
 
-  authDomain: "proyectclima.firebaseapp.com",
+  authDomain: "diabolos-security-system.firebaseapp.com",
 
-  databaseURL: "https://proyectclima-default-rtdb.firebaseio.com",
+  databaseURL: "https://diabolos-security-system-default-rtdb.firebaseio.com",
 
-  projectId: "proyectclima",
+  projectId: "diabolos-security-system",
 
-  storageBucket: "proyectclima.appspot.com",
+  storageBucket: "diabolos-security-system.appspot.com",
 
-  messagingSenderId: "982720757168",
+  messagingSenderId: "828860406671",
 
-  appId: "1:982720757168:web:b29fc7b7f3ab02e09d2a75"
+  appId: "1:828860406671:web:754021ad65f1fec99e89fa"
 };
 
 const fire = firebase.initializeApp(config);
