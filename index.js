@@ -1,7 +1,7 @@
 const express = require('express')
 const PORT = process.env.PORT || 5000
 var app = express();
-var fire = require('./fire')
+var fire = require('./fire.js')
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
