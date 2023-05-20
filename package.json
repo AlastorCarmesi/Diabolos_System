@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "IoT Express Firestore Heroku",
   "engines": {
-    "node": "8.9.1"
+    "node": "16.17.0"
   },
   "main": "index.js",
   "scripts": {
