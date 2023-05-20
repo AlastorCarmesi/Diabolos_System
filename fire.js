@@ -1,4 +1,6 @@
 const firebase = require ('firebase/app');
+const { initializeApp } = require('firebase/app')
+const { getDatabase } = require('firebase/database');
 require('firebase/database');
 
 const firebaseConfig = {
@@ -12,12 +14,9 @@ const firebaseConfig = {
   measurementId: "G-BTPB0XBY5B"
 };
 
-// Importar la función initializeApp correctamente
-const { initializeApp } = require('firebase/app')
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 // Obtener la instancia de la base de datos
-const database = firebase.database(app);
+const database = getDatabase(app);
 module.exports = database;
