@@ -2,7 +2,6 @@ const express = require('express');
 const PORT = process.env.PORT || 5000
 var app = express();
 const fire = require('./fire');
-const database = fire.database();
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
