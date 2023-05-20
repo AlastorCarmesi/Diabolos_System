@@ -1,3 +1,4 @@
+import { initializeApp } from 'firebase/app';
 const firebase = require ("firebase/app");
 require('firebase/database');
 
