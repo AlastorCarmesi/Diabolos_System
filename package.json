@@ -1,4 +1,10 @@
 {
+  "name": "Diabolos_System",
+  "version": "0.3.0",
+  "description": "IoT Express Firestore Heroku",
+  "engines": {
+    "node": "8.9.1"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
