@@ -34,6 +34,29 @@ app.get('/', (req, res) => {
     })
   })
 
+  app.post('/insertar', (req, res)=>{
+    const db = fire.firestore();
+      db.settings({
+        timestampsInSnapshots: true
+      });
+      
+      db.collection('/BD').add({
+       
+        ID: req.ID,
+        Sensor_PIR: req.body.Sensor_PIR,
+        nombre: req.body.nombre,
+        Fecha: new Date().toJSON()
+      });
+      res.send({
+        ID: req.body.ID,
+        Sensor_PIR: req.body.Sensor_PIR,
+        nombre: req.body.nombre,
+        Fecha: new Date(),
+        status: 'Valores insertados!'
+    })
+  })
+  
+
   app.listen(PORT, () => {
     console.log(`Servidor en funcionamiento en el puerto ${PORT}`);
   });
