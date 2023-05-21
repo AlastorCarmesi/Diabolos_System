@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
         timestampsInSnapshots: true
       });
       var wholeData = []
-      db.collection('/BD').orderBy('Fecha', 'ID').get()
+      db.collection('/BD').orderBy('ID', 'Sensor_PIR').get()
       .then(snapshot => {
         snapshot.forEach(doc => {
         
