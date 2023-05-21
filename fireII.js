@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
-const { initializeApp } = require ("firebase/app");
-
+const firebase = require('firebase/app');
+require('firebase/firestore');
 
 const firebaseConfig = {
+  // Tu configuración de Firebase aquí
   apiKey: "AIzaSyDiLnrTW9q6cCqFektC-HpxQw65Y3ZCVQ8",
   authDomain: "diabolos-security-system.firebaseapp.com",
   databaseURL: "https://diabolos-security-system-default-rtdb.firebaseio.com",
@@ -13,6 +14,6 @@ const firebaseConfig = {
   measurementId: "G-BTPB0XBY5B"
 };
 
-// Initialize Firebase
-const fire = initializeApp(firebaseConfig);
-module.exports = {fire};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+module.exports = db;
