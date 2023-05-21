@@ -17,12 +17,11 @@ app.get('/', (req, res) => {
   })
 
   app.get('/ver', (req, res) => {
-    const db = fire.firestore();
-      db.settings({
+      fire.settings({
         timestampsInSnapshots: true
       });
       var wholeData = []
-      db.collection('/BD').orderBy('Fecha', 'ID').get()
+      fire.collection('/BD').orderBy('Fecha', 'ID').get()
       .then(snapshot => {
         snapshot.forEach(doc => {
         
@@ -37,11 +36,10 @@ app.get('/', (req, res) => {
   })
 
   app.post('/insertar', (req, res)=>{
-    const db = fire.firestore();
-    db.settings({
+    fire.settings({
         timestampsInSnapshots: true
       });
-    db.collection('/BD').add(
+    fire.collection('/BD').add(
       {
         ID: req.ID,
         Sensor_PIR: req.body.Sensor_PIR,
