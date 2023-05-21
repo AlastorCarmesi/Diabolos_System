@@ -43,14 +43,14 @@ app.get('/', (req, res) => {
       
       db.collection('/BD').add({
        
-        ID: req.ID,
+        ID: req.body.ID,
         Sensor_PIR: req.body.Sensor_PIR,
         nombre: req.body.nombre,
         Fecha: new Date().toJSON()
         
       });
       res.send({
-        ID: req.ID,
+        ID: req.body.ID,
         Sensor_PIR: req.body.Sensor_PIR,
         nombre: req.body.nombre,
         Fecha: new Date().toJSON(),
