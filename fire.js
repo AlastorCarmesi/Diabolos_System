@@ -1,5 +1,5 @@
 var firebase = require('firebase/app');
-require("firebase/firestore");
+//require("firebase/firestore");
 //const { initializeApp } = require('firebase/app')
 
 
