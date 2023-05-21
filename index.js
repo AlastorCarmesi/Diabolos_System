@@ -1,11 +1,10 @@
 const express = require('express');
 const PORT = process.env.PORT || 5000
 var app = express();
-const fire = require('./fire');
+var fire = require('./fire');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 const { error } = require('console');
-const { Firestore } = require('@firebase/firestore');
 
 app.use(cors());
 app.use(bodyParser.json());

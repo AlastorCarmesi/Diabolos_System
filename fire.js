@@ -1,9 +1,9 @@
-const firebase = require('firebase/app');
+var firebase = require('firebase/app');
 require("firebase/firestore");
 //const { initializeApp } = require('firebase/app')
 
 
-const firebaseConfig = {
+var firebaseConfig = {
   apiKey: "AIzaSyDiLnrTW9q6cCqFektC-HpxQw65Y3ZCVQ8",
   authDomain: "diabolos-security-system.firebaseapp.com",
   databaseURL: "https://diabolos-security-system-default-rtdb.firebaseio.com",
