@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-var firebase = require('firebase')
-//const { initializeApp } = require ("firebase/app");
+var Base = require('firebase')
+const { initializeApp } = require ("firebase/app");
 
 
 const firebaseConfig = {
@@ -15,6 +15,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-
-const fire = firebase.initializeApp(firebaseConfig);
-module.exports = fire;
+const base = Base.initializeApp(firebaseConfig);
+const fire = initializeApp(firebaseConfig);
+module.exports = {fire, base};
