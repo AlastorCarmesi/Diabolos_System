@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-var Base = require('firebase')
+const Base = require('firebase')
 const { initializeApp } = require ("firebase/app");
 
 
