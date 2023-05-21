@@ -1,10 +1,11 @@
 const express = require('express');
 const PORT = process.env.PORT || 5000
 var app = express();
-const {fire, base} = require('./fireII');
+const fire = require('./fireII');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 const { error } = require('console');
+const { Firestore } = require('@firebase/firestore');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,7 +17,7 @@ app.get('/', (req, res) => {
   })
 
   app.get('/ver', (req, res) => {
-    const db = base;
+    const db = fire.firestore();
       db.settings({
         timestampsInSnapshots: true
       });
@@ -36,7 +37,7 @@ app.get('/', (req, res) => {
   })
 
   app.post('/insertar', (req, res)=>{
-    const db = base;
+    const db = fire.firestore();
     db.collection('/BD').add(
       {
         ID: req.ID,
