@@ -38,6 +38,9 @@ app.get('/', (req, res) => {
 
   app.post('/insertar', (req, res)=>{
     const db = fire.firestore();
+    db.settings({
+        timestampsInSnapshots: true
+      });
     db.collection('/BD').add(
       {
         ID: req.ID,
