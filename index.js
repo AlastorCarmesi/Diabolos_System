@@ -1,7 +1,7 @@
 const express = require('express');
 const PORT = process.env.PORT || 5000
 var app = express();
-var fire = require('./fire');
+var fire = require('./fire')
 var cors = require('cors');
 var bodyParser = require('body-parser');
 const { error } = require('console');
@@ -36,8 +36,9 @@ app.get('/', (req, res) => {
   })
 
   app.post('/insertar', (req, res)=>{
+
     const db = fire.firestore();
-      db.settings({
+          db.settings({
         timestampsInSnapshots: true
       });
       
@@ -60,5 +61,5 @@ app.get('/', (req, res) => {
   
 
   app.listen(PORT, () => {
-    console.log(`Servidor en funcionamiento en el puerto ${PORT}`);
-  });
+    console.log(`Servidor en funcionamiento en el puerto ${PORT}`)
+  })
