@@ -17,9 +17,6 @@ app.get('/', (req, res) => {
 
   app.get('/ver', (req, res) => {
     const db = fire.firestore();
-      db.settings({
-        timestampsInSnapshots: true
-      });
       var wholeData = []
       db.collection('/BD').orderBy('ID', 'Sensor_PIR').get()
       .then(snapshot => {
@@ -38,9 +35,6 @@ app.get('/', (req, res) => {
   app.post('/insertar', (req, res)=>{
 
     const db = fire.firestore();
-          db.settings({
-        timestampsInSnapshots: true
-      });
       
       db.collection('/BD').add({
        
