@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     const db = fire.firestore();
    
       var wholeData = []
-      db.collection('/BD').orderBy('Fecha', 'Sensor_PIR').get()
+      db.collection('/BD').orderBy('Fecha', 'asc').get()
       .then(snapshot => {
         snapshot.forEach(doc => {
         
