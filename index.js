@@ -17,17 +17,21 @@ app.get('/', (req, res) => {
 
   app.get('/ver', (req, res) => {
     const db = fire.firestore();
-    var wholeData = []
-    db.collection('/BD').orderBy('ID', 'Sensor_PIR').get()
-    .then(snapshot => {
-      snapshot.forEach(doc => {
-        wholeData.push(doc.data())
-      });
-      console.log(wholeData)
-      res.send(wholeData)
-    })
-    .catch(error => {
-      console.log('Error!', error);
+    db.settings({
+      timestampsInSnapshots: true
+    });
+      var wholeData = []
+      db.collection('/BD').orderBy('ID', 'Sensor_PIR').get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+        
+          wholeData.push(doc.data())
+        });
+        console.log(wholeData)
+        res.send(wholeData)
+      })
+      .catch(error => {
+        console.log('Error!', error);
     })
   })
 
