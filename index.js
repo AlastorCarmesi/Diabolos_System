@@ -53,6 +53,34 @@ app.get('/', (req, res) => {
         status: 'Valores insertados!'
     })
   })
+
+
+  app.post('/encender', (req, res)=>{
+    const db = fire.firestore();
+
+      db.collection('Rele').add({
+        r1: true,
+        fecha: new Date()
+      });
+      res.send({
+        r1: true,
+        fecha: new Date(),
+        status: 'Dispositivo encendido'
+    })
+  })
+  app.post('/apagar', (req, res)=>{
+    const db = fire.firestore();
+
+      db.collection('Rele').add({
+        r1: false,
+        fecha: new Date()
+      });
+      res.send({
+        r1: false,
+        fecha: new Date(),
+        status: 'Dispositivo apagado'
+    })
+  })
   
 
   app.listen(PORT, () => {
